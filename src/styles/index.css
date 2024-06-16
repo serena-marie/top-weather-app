@@ -1,0 +1,4 @@
+:root {
+  /* https://jameshfisher.com/2024/03/12/a-formula-for-responsive-font-size/?utm_source=tldrnewsletter */
+  font-size: calc(1rem + 0.25vw);
+}

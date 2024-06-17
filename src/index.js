@@ -1,43 +1,53 @@
-import { fetchWeather, transformData } from './weatherApi';
-import { updateTempDistance } from './temperature';
-import './styles/reset.css';
-import './styles/index.css';
+import { fetchWeather, transformData } from "./weatherApi";
+import { updateTempDistance } from "./temperature";
+import {
+  updateCityElement,
+  updateConditionElement,
+  updateTempElement,
+  updateTimeElement,
+  updateIdealTemp,
+} from "./uiRenderer";
+import "./styles/reset.css";
+import "./styles/index.css";
 
-function fillData(weatherResults) {
-    // Fill data 
-  const tempEl = document.getElementById('tempValue');
-  tempEl.textContent = weatherResults.tempF;
+let weatherResults = {};
 
-  const conditionEl = document.getElementById('condition');
-  conditionEl.textContent = weatherResults.condition.text;
+async function fetchAndFill(location = "") {
+  const weatherData = await fetchWeather(location);
+  weatherResults = await transformData(weatherData);
+  fillData();
+}
 
-  const cityEl = document.getElementById('cityName');
-  cityEl.textContent = weatherResults.city;
+async function handleSearchClick() {
+  const inputValue = document.getElementById("searchInput").value;
+  fetchAndFill(inputValue);
+}
 
-  const timeEl = document.getElementById('currentTime');
-  timeEl.textContent = weatherResults.time;
-
+function handleUnitChange() {
+  updateTempElement(weatherResults);
+  updateIdealTemp();
   updateTempDistance();
 }
 
-async function handleSearchClick(e) {
-  const inputValue = document.getElementById('searchInput').value;
-  const weatherData = await fetchWeather(inputValue);
-  const weatherResults = await transformData(weatherData);
-  fillData(weatherResults);
-}
-
 function handleSetTempClick() {
- updateTempDistance();
+  updateTempDistance();
 }
 
-const searchButton = document.getElementById('searchButton');
-searchButton.addEventListener('click', (e) => handleSearchClick(e));
+function fillData() {
+  updateTempElement(weatherResults);
+  updateConditionElement(weatherResults);
+  updateCityElement(weatherResults);
+  updateTimeElement(weatherResults);
+  updateTempDistance();
+}
 
-const idealTempButton = document.getElementById('idealButton');
-idealTempButton.addEventListener('click', () => handleSetTempClick());
+const searchButton = document.getElementById("searchButton");
+searchButton.addEventListener("click", () => handleSearchClick());
 
-const defaultData = await fetchWeather();
-const results = await transformData(defaultData);
+const idealTempButton = document.getElementById("idealButton");
+idealTempButton.addEventListener("click", () => handleSetTempClick());
 
-fillData(results);
+const tempUnitSelect = document.getElementById("tempSelect");
+tempUnitSelect.addEventListener("change", () => handleUnitChange());
+
+await fetchAndFill();

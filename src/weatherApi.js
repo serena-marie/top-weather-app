@@ -3,7 +3,7 @@ import { format } from 'date-fns';
 const defaultCity = 'San Francisco';
 const apiKey = 'd8f8dda439d843419cb12224241606';
 //`http://api.weatherapi.com/v1/current.json?key=d8f8dda439d843419cb12224241606&q=San Francisco&aqi=no
-const baseUrl = 'http://api.weatherapi.com/v1/current.json';
+const baseUrl = 'https://api.weatherapi.com/v1/current.json';
 const options = {
   mode: 'cors'
 }

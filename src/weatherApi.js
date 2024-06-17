@@ -2,15 +2,15 @@ import { format } from 'date-fns';
 
 const defaultCity = 'San Francisco';
 const apiKey = 'd8f8dda439d843419cb12224241606';
-//`http://api.weatherapi.com/v1/current.json?key=d8f8dda439d843419cb12224241606&q=San Francisco&aqi=no
 const baseUrl = 'https://api.weatherapi.com/v1/current.json';
 const options = {
   mode: 'cors'
 }
 
 async function fetchWeather(location=defaultCity) {
+  const loc = location || defaultCity;
   try {
-    const response = await fetch(`${baseUrl}?key=${apiKey}&q=${location}&aqi=no`, options);
+    const response = await fetch(`${baseUrl}?key=${apiKey}&q=${loc}&aqi=no`, options);
     return response.json();
   } catch (error) {
     console.error(error); 
@@ -18,7 +18,6 @@ async function fetchWeather(location=defaultCity) {
 }
 
 async function transformData(data) {
-  // console.log(data)
   try {
     const locationData = data?.location;
     const currentData = data?.current;

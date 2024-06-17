@@ -19,7 +19,7 @@ Full project details, [here.](https://www.theodinproject.com/lessons/node-path-j
 - [ ] Optional: add a ‘loading’ component that displays from the time the form is submitted until the information comes back from the API.
 
 ### Additional Tasks
-- [ ] Add event listener + logic for temp switch
+- [x] Add event listener + logic for temp switch
 - [ ] Styling
   - [ ] Update background (& schemes) based on weather
   - [ ] Decide on color schemes, different schemes for different weather?

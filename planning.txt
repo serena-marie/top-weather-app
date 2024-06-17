@@ -1,0 +1,61 @@
+HTML:
+
+- A search bar to query for city
+- A full page background image for the weather so:
+
+=======================================
+--------------
+| search bar |              Set ideal temp: []  
+                            C/F Toggle
+--------------
+
+          *** FULL PAGE IMAGE ***
+                  TEMP       _temp math_
+                _CONDITION_
+
+  City Name
+  ----------
+  DATE
+  TIME
+=======================================
+
+
+TEMP  condition
+TEMP  city @ time
+MATH-MATH-MATH-MATH
+JS:
+
+async function(location):
+  try { 
+    const baseUrl = http://api.weatherapi.com/v1/current.json
+
+    const key = //whatever my key is
+    q =location
+    some variable = await fetch(baseUrl?q=location)
+    data = await some variable.json()
+
+    return data[0].weather (will have to check returned form)
+  } catch e {
+
+  }
+
+data I'll want:
+- Temp in C temp_c
+- Temp in F temp_f
+- City Name, State
+- condition:icon, condition:code
+- is_day (night mode vs day mode conditions?)
+
+aysnc function processData(data) {
+  try {
+    return { 
+      data.temp_c
+      data.temp_f
+      data.
+    }
+  } catch {
+
+  }
+}
+
+Or, I can do what adam and I have joked about which is how far away from 69 is it 

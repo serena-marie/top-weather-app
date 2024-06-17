@@ -1,5 +1,12 @@
 import { fetchWeather, transformData } from "./weatherApi";
 import { updateTempDistance } from "./temperature";
+import {
+  updateCityElement,
+  updateConditionElement,
+  updateTempElement,
+  updateTimeElement,
+  updateIdealTemp,
+} from "./uiRenderer";
 import "./styles/reset.css";
 import "./styles/index.css";
 
@@ -13,13 +20,13 @@ async function fetchAndFill(location = "") {
 
 async function handleSearchClick() {
   const inputValue = document.getElementById("searchInput").value;
-  const weatherData = await fetchWeather(inputValue);
-  const weatherResults = await transformData(weatherData);
-  fillData(weatherResults);
+  fetchAndFill(inputValue);
 }
 
-async function handleUnitChange() {
-  fillData();
+function handleUnitChange() {
+  updateTempElement(weatherResults);
+  updateIdealTemp();
+  updateTempDistance();
 }
 
 function handleSetTempClick() {
@@ -27,20 +34,10 @@ function handleSetTempClick() {
 }
 
 function fillData() {
-  const tempUnit = document.getElementById("tempSelect").value;
-  const tempEl = document.getElementById("tempValue");
-  tempEl.textContent =
-    tempUnit === "f" ? weatherResults.tempF : weatherResults.tempC;
-
-  const conditionEl = document.getElementById("condition");
-  conditionEl.textContent = weatherResults.condition.text;
-
-  const cityEl = document.getElementById("cityName");
-  cityEl.textContent = weatherResults.city;
-
-  const timeEl = document.getElementById("currentTime");
-  timeEl.textContent = weatherResults.time;
-
+  updateTempElement(weatherResults);
+  updateConditionElement(weatherResults);
+  updateCityElement(weatherResults);
+  updateTimeElement(weatherResults);
   updateTempDistance();
 }
 

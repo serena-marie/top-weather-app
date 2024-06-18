@@ -7,18 +7,14 @@
   box-sizing: border-box;
 }
 
-.default {
-  background-image: url(../../assets/Default.jpg);
-  object-fit: cover;
-  color: white;
-}
-
 #content {
   display: flex;
   flex-direction: column;
   padding: 2em;
   height: 100vh;
+  width: 100vw;
   box-sizing: border-box;
+  transition: background-color 0.5s ease-in-out 0s;
 }
 
 header {

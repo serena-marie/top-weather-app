@@ -30,9 +30,13 @@ async function transformData(data) {
       condition = "",
       tempC = "",
       tempF = "",
-      time = "";
+      time = "",
+      isDay = "";
     if (locationData.name) city = locationData.name;
     if (locationData.region) region = locationData.region;
+    if (currentData.is_day !== undefined && currentData.is_day !== null) {
+      isDay = currentData.is_day === 1;
+    }
     if (currentData.condition) condition = currentData.condition;
     if (currentData.temp_c) tempC = currentData.temp_c;
     if (currentData.temp_f) tempF = currentData.temp_f;
@@ -48,6 +52,7 @@ async function transformData(data) {
       tempC,
       tempF,
       time,
+      isDay,
     };
   } catch (error) {
     return { error: `${error}` };

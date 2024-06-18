@@ -1,0 +1,46 @@
+.default {
+  background-image: url(../../assets/Default.jpg);
+  background-size: cover;
+  color: white;
+}
+
+.sunnyDay {
+  background-image: url(../../assets/Day-sunny.jpg);
+  background-size: cover;
+  background-position: right;
+}
+
+.cloudyDay {
+  background-image: url(../../assets/Day-cloudy.jpg);
+  background-size: cover;
+  color: white;
+}
+
+.cloudyDay #idealResults {
+  color: black;
+}
+
+.rainyDay {
+  background-image: url(../../assets/Day-rainy.jpg);
+  background-size: cover;
+  color: white;
+}
+
+.clearNight {
+  background-image: url(../../assets/Night-clear.jpg);
+  background-size: cover;
+  background-position: bottom;
+  color: white;
+}
+
+.rainyNight {
+  background-image: url(../../assets/Night-rainy.jpg);
+  background-size: cover;
+  color: white;
+}
+
+.cloudyNight {
+  background-image: url(../../assets/Night-cloudy.jpg);
+  background-size: cover;
+  color: white;
+}

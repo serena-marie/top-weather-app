@@ -1,4 +1,6 @@
 import { getIdealTemp } from "./temperature";
+import { weatherClasses } from "./weatherClasses";
+import "./styles/conditions.css";
 
 function updateTempElement(weatherResults) {
   const tempUnit = document.getElementById("tempSelect").value;
@@ -40,10 +42,27 @@ function updateIdealTemp() {
   return idealTemp;
 }
 
+function updateBackground(weather) {
+  const main = document.querySelector("body");
+  const currentClass = main.classList[0];
+
+  const timeOfDay = weather.isDay ? "day" : "night";
+  let newClass = "default";
+  Object.entries(weatherClasses[timeOfDay]).forEach(([className, codes]) => {
+    if (codes.includes(weather.condition.code)) {
+      newClass = className;
+    }
+  });
+
+  main.classList.remove(currentClass);
+  main.classList.add(newClass);
+}
+
 export {
   updateTempElement,
   updateCityElement,
   updateConditionElement,
   updateTimeElement,
   updateIdealTemp,
+  updateBackground,
 };

@@ -6,6 +6,7 @@ import {
   updateTempElement,
   updateTimeElement,
   updateIdealTemp,
+  updateBackground,
 } from "./uiRenderer";
 import "./styles/reset.css";
 import "./styles/index.css";
@@ -34,6 +35,7 @@ function handleSetTempClick() {
 }
 
 function fillData() {
+  updateBackground(weatherResults);
   updateTempElement(weatherResults);
   updateConditionElement(weatherResults);
   updateCityElement(weatherResults);

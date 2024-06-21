@@ -31,8 +31,8 @@ Full project details, [here.](https://www.theodinproject.com/lessons/node-path-j
 - [x] Add event listener + logic for temp switch
 - [ ] Styling
   - [x] Update background (& schemes) based on weather
-    - [ ] Add transition effect
-  - [ ] Decide on color schemes, different schemes for different weather?
+    - [x] Add transition effect
+  - ~~[ ] Decide on color schemes, different schemes for different weather?~~
   - [ ] Celebration surprise when it's the ideal temp
 - [ ] API
   - [ ] Better sanitization and handling?

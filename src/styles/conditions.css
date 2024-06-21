@@ -1,0 +1,60 @@
+.default {
+  background-image: url(../../assets/Default.jpg);
+  background-size: cover;
+}
+
+.sunnyDay {
+  background-image: url(../../assets/Day-sunny.jpg);
+  background-size: cover;
+  background-position: right;
+}
+
+.cloudyDay {
+  background-image: url(../../assets/Day-cloudy.jpg);
+  background-size: cover;
+}
+
+.rainyDay {
+  background-image: url(../../assets/Day-rainy.jpg);
+  background-size: cover;
+}
+
+.foggyDay {
+  background-image: url(../../assets/Day-fog.jpg);
+  background-size: cover;
+}
+
+.snowyDay {
+  background-image: url(../../assets/Day-snow.jpg);
+  background-size: cover;
+}
+
+.clearNight {
+  background-image: url(../../assets/Night-clear.jpg);
+  background-size: cover;
+  background-position: bottom;
+}
+
+.rainyNight {
+  background-image: url(../../assets/Night-rainy.jpg);
+  background-size: cover;
+}
+
+.rainyNight .mainContent {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.cloudyNight {
+  background-image: url(../../assets/Night-cloudy.jpg);
+  background-size: cover;
+}
+
+.snowyNight {
+  background-image: url(../../assets/Night-snow.jpg);
+  background-size: cover;
+}
+
+.foggyNight {
+  background-image: url(../../assets/Night-fog.jpg);
+  background-size: cover;
+}

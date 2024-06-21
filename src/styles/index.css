@@ -7,23 +7,20 @@
   box-sizing: border-box;
 }
 
-.default {
-  background-image: url(../../assets/Default.jpg);
-  object-fit: cover;
-  color: white;
-}
-
 #content {
   display: flex;
   flex-direction: column;
   padding: 2em;
   height: 100vh;
+  width: 100vw;
   box-sizing: border-box;
+  transition: background-image 0.5s;
 }
 
 header {
   display: flex;
   justify-content: space-between;
+  color: white;
 }
 
 main {
@@ -56,15 +53,30 @@ main {
 }
 
 #idealResults {
-  color: #ccc;
-  font-size: x-small;
+  /* color: #ccc; */
+  font-size: small;
   font-style: italic;
+  padding-bottom: 0.75em;
+  text-align: center;
+}
+
+.mainContent {
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  border-radius: 15px;
+  color: white;
 }
 
 footer {
   text-align: center;
-  font-size: x-small;
-  color: #ccc;
+  font-size: small;
+  /* color: #ccc; */
+  color: white;
   margin-top: auto;
 }
 

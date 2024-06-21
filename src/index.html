@@ -8,13 +8,20 @@
   <body id="content" class="default">
     <header>
       <div id="search">
-        <input type="search" id="searchInput" placeholder="San Francisco, CA"/>
+        <input type="search" id="searchInput" placeholder="San Francisco, CA" />
         <button id="searchButton">Search</button>
       </div>
       <div id="settings">
         <div id="idealTemp">
           <label for="idealTempInput">Ideal Temp:</label>
-          <input type="number" id="idealTempInput" placeholder="69" maxlength="3" max="150" min="-150"/>
+          <input
+            type="number"
+            id="idealTempInput"
+            placeholder="69"
+            maxlength="3"
+            max="150"
+            min="-150"
+          />
           <button id="idealButton">Set</button>
         </div>
         <div id="cfToggle">
@@ -27,21 +34,27 @@
       </div>
     </header>
     <main>
-      <div id="tempDiv">
-        <div id="temp"><span id="tempValue"></span>°</div>
-        <div id="tempDetails">  
-          <div id="condition"></div>
-          <div id="cityDetails">
-            <p id="cityName"></p>
-            <p>@</p>
-            <p id="currentTime"></p>
+      <div class="mainContent">
+        <div id="tempDiv">
+          <div id="temp"><span id="tempValue"></span>°</div>
+          <div id="tempDetails">
+            <div id="condition"></div>
+            <div id="cityDetails">
+              <p id="cityName"></p>
+              <p>@</p>
+              <p id="currentTime"></p>
+            </div>
           </div>
         </div>
+        <div id="idealResults"><span id="math"></span>° away from ideal</div>
       </div>
-      <div id="idealResults"><span id="math"></span>° away from ideal</div>
     </main>
     <footer>
-      <p>Developed by <a href='https://github.com/serena-marie'>Serena Gutierrez</a> in sunny, sometimes foggy, San Francisco.</p>
+      <p>
+        Developed by
+        <a href="https://github.com/serena-marie">Serena Gutierrez</a> in sunny,
+        sometimes foggy, San Francisco.
+      </p>
     </footer>
   </body>
 </html>

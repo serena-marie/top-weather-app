@@ -1,7 +1,6 @@
 .default {
   background-image: url(../../assets/Default.jpg);
   background-size: cover;
-  color: white;
 }
 
 .sunnyDay {
@@ -13,34 +12,49 @@
 .cloudyDay {
   background-image: url(../../assets/Day-cloudy.jpg);
   background-size: cover;
-  color: white;
-}
-
-.cloudyDay #idealResults {
-  color: black;
 }
 
 .rainyDay {
   background-image: url(../../assets/Day-rainy.jpg);
   background-size: cover;
-  color: white;
+}
+
+.foggyDay {
+  background-image: url(../../assets/Day-fog.jpg);
+  background-size: cover;
+}
+
+.snowyDay {
+  background-image: url(../../assets/Day-snow.jpg);
+  background-size: cover;
 }
 
 .clearNight {
   background-image: url(../../assets/Night-clear.jpg);
   background-size: cover;
   background-position: bottom;
-  color: white;
 }
 
 .rainyNight {
   background-image: url(../../assets/Night-rainy.jpg);
   background-size: cover;
-  color: white;
+}
+
+.rainyNight .mainContent {
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .cloudyNight {
   background-image: url(../../assets/Night-cloudy.jpg);
   background-size: cover;
-  color: white;
+}
+
+.snowyNight {
+  background-image: url(../../assets/Night-snow.jpg);
+  background-size: cover;
+}
+
+.foggyNight {
+  background-image: url(../../assets/Night-fog.jpg);
+  background-size: cover;
 }

@@ -10,7 +10,6 @@
 #content {
   display: flex;
   flex-direction: column;
-  padding: 2em;
   height: 100vh;
   width: 100vw;
   box-sizing: border-box;
@@ -21,6 +20,7 @@ header {
   display: flex;
   justify-content: space-between;
   color: white;
+  padding: 2em;
 }
 
 main {
@@ -29,6 +29,27 @@ main {
   justify-content: center;
   align-items: center;
   height: 100vh;
+}
+
+#surprise {
+  height: 200px;
+  padding-bottom: 1.5rem;
+}
+
+#surprise.showSurprise {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+#surprise > img {
+  clip-path: circle();
+  width: 100%;
+  height: 100%;
+}
+
+.imageWrap {
+  filter: drop-shadow(-1px 6px 3px rgba(0, 0, 0, 0.5));
 }
 
 #tempDiv {
@@ -75,9 +96,9 @@ main {
 footer {
   text-align: center;
   font-size: small;
-  /* color: #ccc; */
   color: white;
   margin-top: auto;
+  padding: 2em;
 }
 
 footer > a {

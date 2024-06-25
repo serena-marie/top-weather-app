@@ -1,5 +1,6 @@
 import { getIdealTemp } from "./temperature";
 import { weatherClasses } from "./weatherClasses";
+import { giphy } from "./giphyApi";
 import "./styles/conditions.css";
 
 function updateTempElement(weatherResults) {
@@ -58,6 +59,25 @@ function updateBackground(weather) {
   main.classList.add(newClass);
 }
 
+async function updateSurprise(mutations) {
+  const changedText = mutations[0].target.textContent;
+  const surpriseDiv = document.getElementById("surprise");
+  if (changedText === "0.0") {
+    surpriseDiv.classList.add("showSurprise");
+    const image = document.createElement("img");
+    image.src = await giphy();
+    surpriseDiv.append(image);
+  } else {
+    if (surpriseDiv.classList.contains("showSurprise")) {
+      surpriseDiv.classList.remove("showSurprise");
+    }
+
+    if (surpriseDiv.hasChildNodes()) {
+      surpriseDiv.textContent = "";
+    }
+  }
+}
+
 export {
   updateTempElement,
   updateCityElement,
@@ -65,4 +85,5 @@ export {
   updateTimeElement,
   updateIdealTemp,
   updateBackground,
+  updateSurprise,
 };

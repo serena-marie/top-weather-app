@@ -11,7 +11,6 @@ This app uses the weather API to display the current weather.
 
 ### Features coming soon
 
-- Celebrate when ideal temp is met, as a lil treat
 - Loading component
 
 Full project details, [here.](https://www.theodinproject.com/lessons/node-path-javascript-weather-app)
@@ -33,7 +32,7 @@ Full project details, [here.](https://www.theodinproject.com/lessons/node-path-j
   - [x] Update background (& schemes) based on weather
     - [x] Add transition effect
   - ~~[ ] Decide on color schemes, different schemes for different weather?~~
-  - [ ] Celebration surprise when it's the ideal temp
+  - [x] Celebration surprise when it's the ideal temp
 - [ ] API
   - [ ] Better sanitization and handling?
 - [ ] Footer:

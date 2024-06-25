@@ -7,6 +7,7 @@ import {
   updateTimeElement,
   updateIdealTemp,
   updateBackground,
+  updateSurprise,
 } from "./uiRenderer";
 import "./styles/reset.css";
 import "./styles/index.css";
@@ -53,3 +54,8 @@ const tempUnitSelect = document.getElementById("tempSelect");
 tempUnitSelect.addEventListener("change", () => handleUnitChange());
 
 await fetchAndFill();
+
+const observer = new MutationObserver((mutations) => updateSurprise(mutations));
+const mathResults = document.getElementById("math");
+const config = { childList: true };
+observer.observe(mathResults, config);

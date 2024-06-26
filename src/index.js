@@ -11,13 +11,22 @@ import {
 } from "./uiRenderer";
 import "./styles/reset.css";
 import "./styles/index.css";
+import "./iconsConfig";
 
 let weatherResults = {};
 
 async function fetchAndFill(location = "") {
-  const weatherData = await fetchWeather(location);
-  weatherResults = await transformData(weatherData);
-  fillData();
+  try {
+    showLoadingIcon();
+    const weatherData = await fetchWeather(location);
+    weatherResults = await transformData(weatherData);
+    fillData();
+    return { status: "ok" };
+  } catch (error) {
+    return { error: `${error}` };
+  } finally {
+    hideLoadingIcon();
+  }
 }
 
 async function handleSearchClick() {
@@ -42,6 +51,16 @@ function fillData() {
   updateCityElement(weatherResults);
   updateTimeElement(weatherResults);
   updateTempDistance();
+}
+
+function showLoadingIcon() {
+  const loader = document.getElementById("loader");
+  loader.style.display = "visible";
+}
+
+function hideLoadingIcon() {
+  const loader = document.getElementById("loader");
+  loader.style.display = "none";
 }
 
 const searchButton = document.getElementById("searchButton");

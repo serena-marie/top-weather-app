@@ -23,15 +23,14 @@ Full project details, [here.](https://www.theodinproject.com/lessons/node-path-j
 - [?] Set up a ~~form~~ that will let users input their location and will fetch the weather info
 - [x] Display the information on your webpage
 - [x] Add styling
-- [ ] Optional: add a ‘loading’ component that displays from the time the form is submitted until the information comes back from the API.
+- [x] Optional: add a ‘loading’ component
 
 ### Additional Tasks
 
 - [x] Add event listener + logic for temp switch
-- [ ] Styling
+- [x] Styling
   - [x] Update background (& schemes) based on weather
     - [x] Add transition effect
-  - ~~[ ] Decide on color schemes, different schemes for different weather?~~
   - [x] Celebration surprise when it's the ideal temp
 - [ ] API
   - [ ] Better sanitization and handling?

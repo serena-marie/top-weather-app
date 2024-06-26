@@ -1,6 +1,7 @@
 {
   "scripts": {
     "start": "webpack serve --open --config ./build/webpack.dev.js",
+    "prebuild": "echo \"@fortawesome:registry=https://npm.fontawesome.com/\\n//npm.fontawesome.com/:_authToken=${NPM_AUTH_TOKEN}\" > .npmrc",
     "build": "webpack --config ./build/webpack.prod.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint ./src/**/*.js",
@@ -24,6 +25,8 @@
     "webpack-merge": "^5.10.0"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.5.2",
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "date-fns": "^3.6.0"
   }
 }

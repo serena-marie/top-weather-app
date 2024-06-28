@@ -32,7 +32,7 @@ Full project details, [here.](https://www.theodinproject.com/lessons/node-path-j
   - [x] Update background (& schemes) based on weather
     - [x] Add transition effect
   - [x] Celebration surprise when it's the ideal temp
-- [ ] API
-  - [ ] Better sanitization and handling?
+- [x] API
+  - [x] Better sanitization and handling?
 - [ ] Footer:
   - [ ] Adjust visited/active link colors
